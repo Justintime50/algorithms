@@ -40,3 +40,16 @@ make install
 ```bash
 venv/bin/python src/sorting/bubble_sort.py
 ```
+
+## Development
+
+```bash
+# Lint the project
+make lint
+
+# Run tests
+make test
+
+# Run test coverage
+make coverage
+```

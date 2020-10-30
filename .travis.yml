@@ -9,8 +9,8 @@ install: pip install -e ."[dev]"
 
 script: 
     - flake8 algorithms/*.py
-    # - flake8 test/*.py
-    # - pytest --cov=algorithms --cov-branch
+    - flake8 test/*.py
+    - pytest --cov=algorithms --cov-branch
 
-# after_success:
-#     - coveralls
+after_success:
+    - coveralls
