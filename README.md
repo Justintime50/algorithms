@@ -2,7 +2,7 @@
 
 Here lies classic algorithms and the lessons learned while building them.
 
-[![Build Status](https://travis.com/Justintime50/algorithms.svg?branch=main)](https://travis.com/Justintime50/algorithms)
+[![Build Status](https://travis-ci.com/Justintime50/algorithms.svg?branch=main)](https://travis.com/Justintime50/algorithms)
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
 [![PyPi](https://img.shields.io/pypi/v/TODO-)](https://pypi.org/project/TODO-/)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
