@@ -1,11 +1,13 @@
 # Algorithms
 
-A repo of algorithms.
+Here lies classic algorithms and the lessons learned while building them.
 
-[![Build Status](https://travis.com/Justintime50/algorithms.svg?branch=master)](https://travis.com/Justintime50/algorithms)
-[![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=master)](https://coveralls.io/github/Justintime50/algorithms?branch=master)
+[![Build Status](https://travis.com/Justintime50/algorithms.svg?branch=main)](https://travis.com/Justintime50/algorithms)
+[![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
 [![PyPi](https://img.shields.io/pypi/v/TODO-)](https://pypi.org/project/TODO-/)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
+
+**Bubble Sort**
 
 ```
 Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
@@ -27,7 +29,11 @@ Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
 List sorted successfully in 0:00:00.000080 with Bubble Sort Algorithm!
 ```
 
-Here lies classic algorithms and the lessons learned while building them.
+## Install
+
+```bash
+make install
+```
 
 ## Usage
 
