@@ -1,6 +1,9 @@
 # CHANGELOG
 
-## v0.1.0 (2020-10-30)
+## v0.2.0 (2020-10-30)
 
-* Added Bubble Sort algorithm
-* Added unit tests
+* Added the Fibonnaci Sequence & unit tests
+
+## v0.1.0 (2020-10-29)
+
+* Added Bubble Sort algorithm & unit tests

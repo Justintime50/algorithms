@@ -7,6 +7,8 @@ BUBBLE SORT
 Description: Bubble Sort is the simplest sorting algorithm that works by
 repeatedly swapping the adjacent elements if they are in wrong order.
 
+Usage: venv/bin/python bubble_sort.py
+
 Features:
 - Lists can contain multiple duplicate values and still sort properly
 - Timestamps show how quickly your data was sorted

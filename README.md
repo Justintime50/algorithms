@@ -7,6 +7,8 @@ Here lies classic algorithms and the lessons learned while building them.
 [![PyPi](https://img.shields.io/pypi/v/TODO-)](https://pypi.org/project/TODO-/)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
 
+## Available Algorithms
+
 **Bubble Sort**
 
 ```
@@ -29,6 +31,13 @@ Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
 List sorted successfully in 0:00:00.000080 with Bubble Sort Algorithm!
 ```
 
+**Fibonnaci Sequence**
+
+```
+The Fibonacci Sequence to the 20th iteration:
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+```
+
 ## Install
 
 ```bash
@@ -37,8 +46,11 @@ make install
 
 ## Usage
 
+See each script for additional descriptions, usage, features, and lessons learned.
+
 ```bash
 venv/bin/python src/sorting/bubble_sort.py
+venv/bin/python src/sequences/fibonacci_sequence.py
 ```
 
 ## Development
