@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='algorithms',
-    version='0.1.0',
+    version='0.3.0',
     description='A repo of algorithms.',
     long_description=long_description,
     long_description_content_type="text/markdown",

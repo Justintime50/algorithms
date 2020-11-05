@@ -19,7 +19,7 @@ class FibonacciSequence():
     @classmethod
     def run(cls):
         cls.check_max_iterations()
-        print(f'The Fibonacci Sequence to the {MAX_ITERATIONS}th iteration:')
+        print(f'The Fibonacci Sequence to {MAX_ITERATIONS} iterations:')
         fibonacci_sequence = cls.iterate_fibonacci_sequence()
         return fibonacci_sequence
 

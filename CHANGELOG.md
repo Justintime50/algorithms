@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.3.0 (2020-11-05)
+
+* Added FizzBuzz and unit tests
+
 ## v0.2.0 (2020-10-30)
 
 * Added the Fibonnaci Sequence & unit tests

@@ -4,12 +4,43 @@ Here lies classic algorithms and the lessons learned while building them.
 
 [![Build Status](https://travis-ci.com/Justintime50/algorithms.svg?branch=main)](https://travis.com/Justintime50/algorithms)
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
-[![PyPi](https://img.shields.io/pypi/v/TODO-)](https://pypi.org/project/TODO-/)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
 
 ## Available Algorithms
 
-**Bubble Sort**
+### Sequences
+
+[**Fibonnaci Sequence**](algorithms/sequences/fibonnaci_sequence.py)
+
+```
+The Fibonacci Sequence to 20 iterations:
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+```
+
+[**Fizz Buzz**](algorithms/sequences/fizzbuzz.py)
+
+```
+Fizz Buzz to 15 iterations:
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+```
+
+### Sorting
+
+[**Bubble Sort**](algorithms/sorting/bubble_sort.py)
 
 ```
 Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
@@ -29,13 +60,6 @@ Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
 [1, 2, 3, 5, 4, 6, 7, 8, 9] => Swapped 3 and 2
 [1, 2, 3, 4, 5, 6, 7, 8, 9] => Swapped 5 and 4
 List sorted successfully in 0:00:00.000080 with Bubble Sort Algorithm!
-```
-
-**Fibonnaci Sequence**
-
-```
-The Fibonacci Sequence to the 20th iteration:
-[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
 ```
 
 ## Install
