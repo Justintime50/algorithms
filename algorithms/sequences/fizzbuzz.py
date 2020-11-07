@@ -1,4 +1,5 @@
 import os
+import sys
 
 """
 FIZZBUZZ
@@ -25,12 +26,20 @@ class FizzBuzz():
         """Iterate through numbers and
         print FizzBuzz to console.
         """
+        cls.validate_iterations()
         print(f'Fizz Buzz to {ITERATIONS} iterations:')
         i = 1
         while i <= ITERATIONS:
             output = cls.determine_output(i)
             i += 1
             print(output)
+
+    @classmethod
+    def validate_iterations(cls):
+        """Validate the iterations before proceeding
+        """
+        if ITERATIONS < 1:
+            sys.exit('ITERATIONS must be greater than or equal to 1.')
 
     @classmethod
     def determine_output(cls, i):

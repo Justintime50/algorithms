@@ -1,12 +1,49 @@
+<div align="center">
+
 # Algorithms
 
-Here lies classic algorithms and the lessons learned while building them.
+Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a Sudoku solver, and more.
 
 [![Build Status](https://travis-ci.com/Justintime50/algorithms.svg?branch=main)](https://travis.com/Justintime50/algorithms)
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
 
+<img src="assets/showcase.png" alt="Showcase">
+
+</div>
+
 ## Available Algorithms
+
+### Recursion
+
+[**Sudoku Solver**](algorithms/recursion/sudoku.py)
+
+```
+Original:
+[3, 0, 6, 5, 0, 8, 4, 0, 0]
+[5, 2, 0, 0, 0, 0, 0, 0, 0]
+[0, 8, 7, 0, 0, 0, 0, 3, 1]
+[0, 0, 3, 0, 1, 0, 0, 8, 0]
+[9, 0, 0, 8, 6, 3, 0, 0, 5]
+[0, 5, 0, 0, 9, 0, 6, 0, 0]
+[1, 3, 0, 0, 0, 0, 2, 5, 0]
+[0, 0, 0, 0, 0, 0, 0, 7, 4]
+[0, 0, 5, 2, 0, 6, 3, 0, 0]
+
+
+Solved:
+[3, 1, 6, 5, 7, 8, 4, 9, 2]
+[5, 2, 9, 1, 3, 4, 7, 6, 8]
+[4, 8, 7, 6, 2, 9, 5, 3, 1]
+[2, 6, 3, 4, 1, 5, 9, 8, 7]
+[9, 7, 4, 8, 6, 3, 1, 2, 5]
+[8, 5, 1, 7, 9, 2, 6, 4, 3]
+[1, 3, 8, 9, 4, 7, 2, 5, 6]
+[6, 9, 2, 3, 5, 1, 8, 7, 4]
+[7, 4, 5, 2, 8, 6, 3, 1, 9]
+Numbers put into the Sudoku puzzle: 769
+Numbers that had to be backtracked due to a dead-end: 720
+```
 
 ### Sequences
 
@@ -73,8 +110,7 @@ make install
 See each script for additional descriptions, usage, features, and lessons learned.
 
 ```bash
-venv/bin/python src/sorting/bubble_sort.py
-venv/bin/python src/sequences/fibonacci_sequence.py
+venv/bin/python algorithms/category/script.py
 ```
 
 ## Development
@@ -89,3 +125,7 @@ make test
 # Run test coverage
 make coverage
 ```
+
+## Attributions
+
+Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

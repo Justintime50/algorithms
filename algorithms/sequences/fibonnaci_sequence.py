@@ -12,25 +12,27 @@ Usage: ITERATIONS=20 venv/bin/python fibonnaci_sequence.py
 """
 
 
-MAX_ITERATIONS = int(os.getenv('ITERATIONS', 15))
+ITERATIONS = int(os.getenv('ITERATIONS', 15))
 
 
 class FibonacciSequence():
     @classmethod
     def run(cls):
-        cls.check_max_iterations()
-        print(f'The Fibonacci Sequence to {MAX_ITERATIONS} iterations:')
+        cls.validate_iterations()
+        print(f'The Fibonacci Sequence to {ITERATIONS} iterations:')
         fibonacci_sequence = cls.iterate_fibonacci_sequence()
         return fibonacci_sequence
 
     @classmethod
-    def check_max_iterations(cls):
+    def validate_iterations(cls):
         """Check if the first parameter exceeds the max iterations allowed
         """
-        if MAX_ITERATIONS >= 94:
+        if ITERATIONS >= 94:
             sys.exit(('This tool can only print up to 93 iterations before the'
                       ' Fibonacci number exceeds the max value allowed.'
                       ' Please select a lower number and try again.'))
+        if ITERATIONS < 1:
+            sys.exit('ITERATIONS must be greater than or equal to 1.')
 
     @classmethod
     def iterate_fibonacci_sequence(cls):
@@ -41,7 +43,7 @@ class FibonacciSequence():
         previous_number = 0
         final_list = []
         counter = 1
-        while counter < MAX_ITERATIONS:
+        while counter < ITERATIONS:
             new_number = previous_number + this_number
             this_number = previous_number
             previous_number = new_number
