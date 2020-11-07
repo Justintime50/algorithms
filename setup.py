@@ -4,9 +4,13 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+REQUIREMENTS = [
+    'numpy >= 1.19.4',
+]
+
 setuptools.setup(
     name='algorithms',
-    version='0.3.0',
+    version='0.4.0',
     description='A repo of algorithms.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -19,6 +23,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=REQUIREMENTS,
     extras_require={
         'dev': [
             'pytest >= 6.0.0',

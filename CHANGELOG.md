@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.4.0 (2020-11-06)
+
+* Added a Sudoku solver and unit tests
+
 ## v0.3.0 (2020-11-05)
 
 * Added FizzBuzz and unit tests

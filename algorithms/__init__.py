@@ -2,3 +2,4 @@
 from algorithms.sorting.bubble_sort import BubbleSort
 from algorithms.sequences.fibonnaci_sequence import FibonacciSequence
 from algorithms.sequences.fizzbuzz import FizzBuzz
+from algorithms.recursion.sudoku import Sudoku
