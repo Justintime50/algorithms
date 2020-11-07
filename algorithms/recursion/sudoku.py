@@ -15,11 +15,9 @@ Lessons Learned:
 1) The only way this works is if you use back tracking and recursion, otherwise you'll get to
 a dead end and cannot continue. Backtracking and recursion will help when we hit a dead end
 2) Recursion and returning from recursion is tricky. You must properly return from a recursive
-function or risk getting `NoneType` on the return
+function or risk getting `NoneType` on the return, additionally, you want to make sure you return
+at the right place so you don't have an eternal loop and your recursion can move on.
 """
-
-
-# Unfilled items must be a 0
 
 
 class Sudoku():
@@ -29,7 +27,6 @@ class Sudoku():
         """
         global count_numbers_added
         global count_numbers_backtracked
-        global grid
         count_numbers_added = 0
         count_numbers_backtracked = 0
         grid = [
@@ -44,14 +41,25 @@ class Sudoku():
             [0, 0, 5, 2, 0, 6, 3, 0, 0]
         ]
         # TODO: Allow for dynamic grid generation
-        # grid = cls.generate_numpy_grid
+        # grid = cls.generate_numpy_grid()
         print('Original:')
         for row in grid:
             print(row)
         print('\n')
-        cls.solve_puzzle()
-        # TODO: Print the solved puzzle here instead of in the
-        # solve_puzzle function
+        solved_grid = cls.solve_puzzle(grid)
+        if solved_grid:
+            print('Solved:')
+            for row in grid:
+                print(row)
+            print(f'Numbers put into the Sudoku puzzle: {count_numbers_added}')
+            print(f'Numbers that had to be backtracked due to a dead-end: {count_numbers_backtracked}')
+            # TODO: Count how many solutions the solver came up with
+            # Only show this prompt if there are indeed more solutions
+            # show_more = input('Show other solutions? (yes/no)')
+            # if show_more.lower() != 'yes':
+            #     sys.exit('Skipped showing other solutions.')
+        else:
+            sys.exit('No solution!')
 
     @classmethod
     def generate_numpy_grid(cls):
@@ -73,7 +81,7 @@ class Sudoku():
         return grid
 
     @classmethod
-    def check_valid_number(cls, y, x, n):
+    def check_valid_number(cls, y, x, n, grid):
         """Checks if a number is valid inside the
         row, column, and block
 
@@ -82,7 +90,6 @@ class Sudoku():
         """
         # Check the row and column for a number
         # that intersects and is already used
-        global grid
         for i in range(9):
             if grid[y][i] == n or grid[i][x] == n:
                 return False
@@ -99,7 +106,7 @@ class Sudoku():
         return True
 
     @classmethod
-    def solve_puzzle(cls):
+    def solve_puzzle(cls, grid):
         """Solves the puzzle recursively by checking
         if numbers are valid, updating the grid, and
         backtracking when necessary until a completed
@@ -107,31 +114,20 @@ class Sudoku():
         """
         global count_numbers_added
         global count_numbers_backtracked
-        global grid
         for y in range(9):
             for x in range(9):
                 if grid[y][x] == 0:
                     for n in range(1, 10):
-                        if cls.check_valid_number(y, x, n):
+                        if cls.check_valid_number(y, x, n, grid):
                             grid[y][x] = n
                             count_numbers_added += 1
-                            cls.solve_puzzle()
+                            if cls.solve_puzzle(grid):
+                                return grid
                             # Here we backtrack if we hit a dead-end
                             grid[y][x] = 0
                             count_numbers_backtracked += 1
-                    return
-
-        print('Solved:')
-        for row in grid:
-            print(row)
-        print(f'Numbers put into the Sudoku puzzle: {count_numbers_added}')
-        print(f'Numbers that had to be backtracked due to a dead-end: {count_numbers_backtracked}')
-        # TODO: Count how many solutions the solver came up with
-        # Only show this prompt if there are indeed more solutions
-        show_more = input('Show other solutions? (yes/no)')
-        if show_more.lower() != 'yes':
-            sys.exit('Skipped showing other solutions.')
-        # TODO: Return the solved puzzle here
+                    return False
+        return grid
 
 
 def main():
