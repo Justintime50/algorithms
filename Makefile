@@ -13,12 +13,6 @@ venv:
 ## install - Install the project locally
 install: | venv
 
-run: ## Run the service locally
-	venv/bin/python algorithms/app.py
-
-docker: ## Run the service in a docker container (always builds)
-	docker-compose up -d --build
-
 ## clean - Remove the virtual environment and clear out .pyc files
 clean:
 	rm -rf ~/.venv/algorithms/ venv
