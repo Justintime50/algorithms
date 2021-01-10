@@ -49,11 +49,17 @@ def main():
     tree.right.left = TreeNode(6)
     tree.right.right = TreeNode(7)
 
+    print('Original tree:')
     print_tree(tree)
     print('')
+
     # Send the entire tree to be inverted
     inverted_tree = invert_tree(tree)
+
+    print('Inverted tree:')
     print_tree(inverted_tree)
+    print('')
+
     return inverted_tree
 
 
