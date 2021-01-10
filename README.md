@@ -4,7 +4,7 @@
 
 Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a Sudoku solver, and more.
 
-[![Build Status](https://travis-ci.com/Justintime50/algorithms.svg?branch=main)](https://travis.com/Justintime50/algorithms)
+[![Build](https://github.com/Justintime50/algorithms/workflows/build/badge.svg)](https://github.com/Justintime50/algorithms/actions)
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
 
@@ -12,11 +12,26 @@ Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a S
 
 </div>
 
+## Algorithm Complexity
+
+All algorithms have a complexity known as `Big-O notation`, the more complex an algorithm, the less efficient it gets as more data is added. For instance, a complex algorithm may be great when there are dozens or records; however, it will not scale well when thousands or tens of thousands of records are applied to it. Listed below are the `Big-O` complexities listed from best to worst:
+
+* O(log n), O(1)
+* O(n)
+* O(n log n)
+* O(n^2)
+* O(2^n)
+* O(n!)
+
 ## Available Algorithms
 
 ### Recursion
 
-[**Sudoku Solver**](algorithms/recursion/sudoku.py)
+[**Invert Binary Tree - O(n)**](algorithms/recursion/invert_binary_tree.py)
+
+<img src="assets/invert_binary_tree.png" alt="Invert Binary Tree">
+
+[**Sudoku Solver - O(n)**](algorithms/recursion/sudoku.py)
 
 ```
 Original:
@@ -47,14 +62,14 @@ Numbers that had to be backtracked due to a dead-end: 720
 
 ### Sequences
 
-[**Fibonnaci Sequence**](algorithms/sequences/fibonnaci_sequence.py)
+[**Fibonnaci Sequence - O(2^n)**](algorithms/sequences/fibonnaci_sequence.py)
 
 ```
 The Fibonacci Sequence to 20 iterations:
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
 ```
 
-[**Fizz Buzz**](algorithms/sequences/fizzbuzz.py)
+[**Fizz Buzz - O(n)**](algorithms/sequences/fizzbuzz.py)
 
 ```
 Fizz Buzz to 15 iterations:
@@ -77,7 +92,7 @@ FizzBuzz
 
 ### Sorting
 
-[**Bubble Sort**](algorithms/sorting/bubble_sort.py)
+[**Bubble Sort - O(1)**](algorithms/sorting/bubble_sort.py)
 
 ```
 Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
