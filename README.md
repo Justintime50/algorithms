@@ -14,14 +14,19 @@ Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a S
 
 ## Algorithm Complexity
 
-All algorithms have a complexity known as `Big-O notation`, the more complex an algorithm, the less efficient it gets as more data is added. For instance, a complex algorithm may be great when there are dozens or records; however, it will not scale well when thousands or tens of thousands of records are applied to it. Listed below are the `Big-O` complexities listed from best to worst:
+> Time and Space Complexity (Big O Notation)
 
-* O(log n), O(1)
+All algorithms have a complexity known as `Big O Notation`, the more complex an algorithm, the less efficient it gets as more data is introduced. Listed below are the `Big-O` complexities listed from best to worst:
+
+* O(1)
+* O(log n)
 * O(n)
-* O(n log n)
+* O(n * log n)
 * O(n^2)
 * O(2^n)
 * O(n!)
+
+<img src="assets/big_o_notation.png" alt="Big O Notation">
 
 ## Available Algorithms
 
