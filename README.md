@@ -8,7 +8,7 @@ Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a S
 [![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
 
-<img src="assets/showcase.png" alt="Showcase">
+<img src="https://raw.githubusercontent.com/justintime50/assets/main/src/algorithms/showcase.png" alt="Showcase">
 
 </div>
 
@@ -26,7 +26,7 @@ All algorithms have a complexity known as `Big O Notation`, the more complex an 
 * O(2^n)
 * O(n!)
 
-<img src="assets/big_o_notation.png" alt="Big O Notation">
+<img src="https://raw.githubusercontent.com/justintime50/assets/main/src/algorithms/big_o_notation.png" alt="Showcase">
 
 ## Available Algorithms
 
@@ -34,7 +34,7 @@ All algorithms have a complexity known as `Big O Notation`, the more complex an 
 
 [**Invert Binary Tree - O(n)**](algorithms/recursion/invert_binary_tree.py)
 
-<img src="assets/invert_binary_tree.png" alt="Invert Binary Tree">
+<img src="https://raw.githubusercontent.com/justintime50/assets/main/src/algorithms/invert_binary_tree.png" alt="Showcase">
 
 [**Sudoku Solver - O(n)**](algorithms/recursion/sudoku.py)
 
@@ -145,7 +145,3 @@ make test
 # Run test coverage
 make coverage
 ```
-
-## Attributions
-
-Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
