@@ -20,7 +20,7 @@ Fizz or Buzz
 ITERATIONS = int(os.getenv('ITERATIONS', 15))
 
 
-class FizzBuzz():
+class FizzBuzz:
     @classmethod
     def run(cls):
         """Iterate through numbers and
@@ -36,8 +36,7 @@ class FizzBuzz():
 
     @classmethod
     def validate_iterations(cls):
-        """Validate the iterations before proceeding
-        """
+        """Validate the iterations before proceeding"""
         if ITERATIONS < 1:
             sys.exit('ITERATIONS must be greater than or equal to 1.')
 
@@ -46,8 +45,8 @@ class FizzBuzz():
         """Determine what the output of each iteration
         is based on its divisibility.
         """
-        fizz = (i % 3 == 0)
-        buzz = (i % 5 == 0)
+        fizz = i % 3 == 0
+        buzz = i % 5 == 0
         if fizz and buzz:
             output = 'FizzBuzz'
         elif fizz:
@@ -56,6 +55,7 @@ class FizzBuzz():
             output = 'Buzz'
         else:
             output = i
+
         return output
 
 
