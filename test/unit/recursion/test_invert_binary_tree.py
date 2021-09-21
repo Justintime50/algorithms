@@ -3,6 +3,7 @@ from algorithms.recursion.invert_binary_tree import main
 
 def test_run_invert_tree():
     tree = main()
+
     assert tree.val == 1
     assert tree.left.val == 3
     assert tree.left.right.val == 6

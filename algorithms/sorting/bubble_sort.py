@@ -27,10 +27,9 @@ number is bigger so it thinks it's done.
 LIST = [3, 1, 5, 9, 7, 6, 2, 8, 4]
 
 
-class BubbleSort():
+class BubbleSort:
     def sort():
-        """Bubble sort a list
-        """
+        """Bubble sort a list"""
         previous_index = 0
         next_index = 1
         new_array = LIST
@@ -41,11 +40,9 @@ class BubbleSort():
         start_time = datetime.now()
         while num_times_skipped + 1 != len(LIST):
             try:
-                if (LIST[next_index] < LIST[previous_index]
-                        and LIST[next_index] != LIST[previous_index]):
+                if LIST[next_index] < LIST[previous_index] and LIST[next_index] != LIST[previous_index]:
                     new_array.insert(next_index, new_array.pop(previous_index))
-                    print(
-                        f'{new_array} => Swapped {LIST[next_index]} and {LIST[previous_index]}')
+                    print(f'{new_array} => Swapped {LIST[next_index]} and {LIST[previous_index]}')
                     previous_index += 1
                     next_index += 1
                 else:
@@ -59,6 +56,7 @@ class BubbleSort():
                 i += 1
         end_time = datetime.now() - start_time
         print(f'List sorted successfully in {end_time} with Bubble Sort Algorithm!')
+
         return new_array
 
 

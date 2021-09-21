@@ -1,7 +1,6 @@
 class TreeNode:
     def __init__(self, x):
-        """Initialize a tree node object which accepts an integer.
-        """
+        """Initialize a tree node object which accepts an integer."""
         self.val = x
         self.left = None
         self.right = None
@@ -26,8 +25,7 @@ def invert_tree(node):
 
 
 def print_tree(node):
-    """Print the output of the tree.
-    """
+    """Print the output of the tree."""
     # Print the top level node
     print(node.val, end='')
 
@@ -39,8 +37,7 @@ def print_tree(node):
 
 
 def main():
-    """Runs the program.
-    """
+    """Runs the program."""
     tree = TreeNode(1)
     tree.left = TreeNode(2)
     tree.right = TreeNode(3)

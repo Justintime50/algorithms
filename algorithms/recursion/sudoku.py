@@ -1,6 +1,6 @@
 import sys
-import numpy as np
 
+import numpy as np
 
 """
 SUDOKU
@@ -20,11 +20,10 @@ at the right place so you don't have an eternal loop and your recursion can move
 """
 
 
-class Sudoku():
+class Sudoku:
     @classmethod
     def run(cls):
-        """Run the Sudoku puzzle solver
-        """
+        """Run the Sudoku puzzle solver"""
         global count_numbers_added
         global count_numbers_backtracked
         count_numbers_added = 0
@@ -38,7 +37,7 @@ class Sudoku():
             [0, 5, 0, 0, 9, 0, 6, 0, 0],
             [1, 3, 0, 0, 0, 0, 2, 5, 0],
             [0, 0, 0, 0, 0, 0, 0, 7, 4],
-            [0, 0, 5, 2, 0, 6, 3, 0, 0]
+            [0, 0, 5, 2, 0, 6, 3, 0, 0],
         ]
         # TODO: Allow for dynamic grid generation
         # grid = cls.generate_numpy_grid()
@@ -63,8 +62,7 @@ class Sudoku():
 
     @classmethod
     def generate_numpy_grid(cls):
-        """Generate a numpy grid of dynamic numbers
-        """
+        """Generate a numpy grid of dynamic numbers"""
         # TODO: Fix this generation, currently it works great to
         # generate a grid; however, it does not generate a correct
         # Sudoku grid that starts with only one number per row,
@@ -78,6 +76,7 @@ class Sudoku():
         grid = numpy_array
         for row in grid:
             print(row)
+
         return grid
 
     @classmethod
@@ -96,8 +95,8 @@ class Sudoku():
 
         # Check the 3x3 block for a number that
         # is already inside the 3x3 block
-        x_block = (x//3)*3
-        y_block = (y//3)*3
+        x_block = (x // 3) * 3
+        y_block = (y // 3) * 3
         for i in range(3):
             for j in range(3):
                 if grid[y_block + i][x_block + j] == n:
@@ -127,6 +126,7 @@ class Sudoku():
                             grid[y][x] = 0
                             count_numbers_backtracked += 1
                     return False
+
         return grid
 
 
