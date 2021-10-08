@@ -136,11 +136,8 @@ venv/bin/python algorithms/category/script.py
 ## Development
 
 ```bash
-# Lint the project
-make lint
-
-# Run tests
-make test
+# Get a comprehensive list of development tools
+make help
 
 # Run test coverage
 make coverage
