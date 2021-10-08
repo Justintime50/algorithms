@@ -138,7 +138,4 @@ venv/bin/python algorithms/category/script.py
 ```bash
 # Get a comprehensive list of development tools
 make help
-
-# Run test coverage
-make coverage
 ```
