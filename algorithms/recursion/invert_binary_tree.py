@@ -6,7 +6,7 @@ class TreeNode:
         self.right = None
 
 
-def invert_tree(node):
+def invert_tree(node: TreeNode) -> TreeNode:
     """Recursively invert a tree by swapping the right and left nodes.
 
     Initially, the entire tree is accepted as a param, each recursion we go
@@ -24,7 +24,7 @@ def invert_tree(node):
     return node
 
 
-def print_tree(node):
+def print_tree(node: TreeNode):
     """Print the output of the tree."""
     # Print the top level node
     print(node.val, end='')
@@ -36,7 +36,7 @@ def print_tree(node):
         print_tree(node.right)
 
 
-def main():
+def main() -> TreeNode:
     """Runs the program."""
     tree = TreeNode(1)
     tree.left = TreeNode(2)

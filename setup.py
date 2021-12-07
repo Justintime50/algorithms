@@ -12,20 +12,24 @@ DEV_REQUIREMENTS = [
     'coveralls == 3.*',
     'flake8',
     'isort',
+    'mypy',
     'pytest == 6.*',
     'pytest-cov == 2.*',
 ]
 
 setuptools.setup(
     name='algorithms',
-    version='0.5.0',
-    description='A repo of algorithms.',
+    version='0.1.0',
+    description=(
+        'Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a Sudoku solver, and more.'
+    ),
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='http://github.com/justintime50/algorithms',
     author='Justintime50',
     license='MIT',
     packages=setuptools.find_packages(),
+    package_data={'algorithms': ['py.typed']},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -35,5 +39,5 @@ setuptools.setup(
     extras_require={
         'dev': DEV_REQUIREMENTS,
     },
-    python_requires='>=3.7',
+    python_requires='>=3.7, <4',
 )

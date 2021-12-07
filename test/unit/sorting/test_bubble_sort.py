@@ -1,7 +1,7 @@
-from algorithms import BubbleSort
+from algorithms.sorting.bubble_sort import bubble_sort
 
 
 def test_bubble_sort():
-    bubble_sort = BubbleSort.sort()
+    sorted_list = bubble_sort()
 
-    assert bubble_sort == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    assert sorted_list == [1, 2, 3, 4, 5, 6, 7, 8, 9]

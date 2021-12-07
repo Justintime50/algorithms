@@ -20,47 +20,41 @@ Fizz or Buzz
 ITERATIONS = int(os.getenv('ITERATIONS', 15))
 
 
-class FizzBuzz:
-    @classmethod
-    def run(cls):
-        """Iterate through numbers and
-        print FizzBuzz to console.
-        """
-        cls.validate_iterations()
-        print(f'Fizz Buzz to {ITERATIONS} iterations:')
-        i = 1
-        while i <= ITERATIONS:
-            output = cls.determine_output(i)
-            i += 1
-            print(output)
+def generate_fizzbuzz():
+    """Iterate through numbers and print FizzBuzz to console."""
+    _validate_iterations()
+    print(f'Fizz Buzz to {ITERATIONS} iterations:')
 
-    @classmethod
-    def validate_iterations(cls):
-        """Validate the iterations before proceeding"""
-        if ITERATIONS < 1:
-            sys.exit('ITERATIONS must be greater than or equal to 1.')
+    for iteration in range(1, ITERATIONS + 1):
+        output = _determine_output(iteration)
+        print(output)
 
-    @classmethod
-    def determine_output(cls, i):
-        """Determine what the output of each iteration
-        is based on its divisibility.
-        """
-        fizz = i % 3 == 0
-        buzz = i % 5 == 0
-        if fizz and buzz:
-            output = 'FizzBuzz'
-        elif fizz:
-            output = 'Fizz'
-        elif buzz:
-            output = 'Buzz'
-        else:
-            output = i
 
-        return output
+def _validate_iterations():
+    """Validate the iterations before proceeding."""
+    if ITERATIONS < 1:
+        sys.exit('ITERATIONS must be greater than or equal to 1.')
+
+
+def _determine_output(iteration) -> str:
+    """Determine what the output of each iteration is based on its divisibility."""
+    fizz = iteration % 3 == 0
+    buzz = iteration % 5 == 0
+
+    if fizz and buzz:
+        output = 'FizzBuzz'
+    elif fizz:
+        output = 'Fizz'
+    elif buzz:
+        output = 'Buzz'
+    else:
+        output = str(iteration)
+
+    return output
 
 
 def main():
-    FizzBuzz.run()
+    generate_fizzbuzz()
 
 
 if __name__ == '__main__':
