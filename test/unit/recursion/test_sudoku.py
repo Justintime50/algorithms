@@ -1,25 +1,14 @@
 from unittest.mock import patch
 
+import pytest
+
 from algorithms.recursion.sudoku import (
+    GRID,
     _check_valid_number,
     _solve_puzzle,
     generate_numpy_grid,
     solve_sudoku_puzzle,
 )
-
-# TODO: Test branches of solve_puzzle, this will require dynamically loading a grid most likely
-
-GRID = [
-    [3, 0, 6, 5, 0, 8, 4, 0, 0],
-    [5, 2, 0, 0, 0, 0, 0, 0, 0],
-    [0, 8, 7, 0, 0, 0, 0, 3, 1],
-    [0, 0, 3, 0, 1, 0, 0, 8, 0],
-    [9, 0, 0, 8, 6, 3, 0, 0, 5],
-    [0, 5, 0, 0, 9, 0, 6, 0, 0],
-    [1, 3, 0, 0, 0, 0, 2, 5, 0],
-    [0, 0, 0, 0, 0, 0, 0, 7, 4],
-    [0, 0, 5, 2, 0, 6, 3, 0, 0],
-]
 
 
 @patch('algorithms.recursion.sudoku._solve_puzzle')
@@ -29,12 +18,12 @@ def test_run(mock_solve_puzzle):
     mock_solve_puzzle.assert_called_once()
 
 
-@patch('sys.exit')
 @patch('algorithms.recursion.sudoku._solve_puzzle', return_value=False)
-def test_run_no_solution(mock_solve_puzzle, mock_sys_exit):
-    solve_sudoku_puzzle()
+def test_run_no_solution(mock_solve_puzzle):
+    with pytest.raises(Exception) as error:
+        solve_sudoku_puzzle()
 
-    mock_sys_exit.assert_called_once_with('No solution!')
+        assert error.message == 'No solution!'
 
 
 def test_generate_numpy_grid():
@@ -55,19 +44,23 @@ def test_check_valid_number():
     assert check_false_block is False
 
 
-@patch('algorithms.recursion.sudoku._check_valid_number')
-def test_solve_puzzle(_check_valid_number):
+def test_solve_puzzle():
+    """If the puzzle is solved, there will be no more 0s and it will have
+    a valid filled grid of numbers.
+    """
     solved_grid = _solve_puzzle(GRID)
-    _check_valid_number.assert_called()
+
+    for row in solved_grid:
+        assert 0 not in row
 
     assert solved_grid == [
-        [3, 1, 6, 5, 1, 8, 4, 1, 1],
-        [5, 2, 1, 1, 1, 1, 1, 1, 1],
-        [1, 8, 7, 1, 1, 1, 1, 3, 1],
-        [1, 1, 3, 1, 1, 1, 1, 8, 1],
-        [9, 1, 1, 8, 6, 3, 1, 1, 5],
-        [1, 5, 1, 1, 9, 1, 6, 1, 1],
-        [1, 3, 1, 1, 1, 1, 2, 5, 1],
-        [1, 1, 1, 1, 1, 1, 1, 7, 4],
-        [1, 1, 5, 2, 1, 6, 3, 1, 1],
+        [3, 1, 6, 5, 7, 8, 4, 9, 2],
+        [5, 2, 9, 1, 3, 4, 7, 6, 8],
+        [4, 8, 7, 6, 2, 9, 5, 3, 1],
+        [2, 6, 3, 4, 1, 5, 9, 8, 7],
+        [9, 7, 4, 8, 6, 3, 1, 2, 5],
+        [8, 5, 1, 7, 9, 2, 6, 4, 3],
+        [1, 3, 8, 9, 4, 7, 2, 5, 6],
+        [6, 9, 2, 3, 5, 1, 8, 7, 4],
+        [7, 4, 5, 2, 8, 6, 3, 1, 9],
     ]
