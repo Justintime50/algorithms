@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 
 import numpy as np
 
@@ -112,7 +112,7 @@ def _check_valid_number(y: int, x: int, n: int, grid: List[List[int]]):
     return True
 
 
-def _solve_puzzle(grid: List[List[int]]) -> List[List[int]]:
+def _solve_puzzle(grid: List[List[int]]) -> Union[List[List[int]], bool]:
     """Solves the puzzle recursively by checking if numbers are valid, updating the grid, and
     backtracking when necessary until a completed grid is built and returned.
     """
