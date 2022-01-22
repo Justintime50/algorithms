@@ -1,3 +1,5 @@
+# type: ignore
+
 import json
 import os
 import string
@@ -9,15 +11,15 @@ DEAD_LETTERS = []
 # Place letters here that were correct, but not in the right position (yellow background)
 # and say what index they didn't work in, eg:
 # {
-#     "e": [0, 1],
-#     "i": [2, 4],
-#     "n": [0, 3],
-#     "c": [2],
+#     'e': [0, 1],
+#     'i': [2, 4],
+#     'n': [0, 3],
+#     'c': [2],
 # }
 CORRECT_LETTERS_WRONG_POSITIONS = {}
 
 # Place your word guess here (starting word is `arose`)
-VERIFIED_LETTERS = ["", "", "", "", ""]
+VERIFIED_LETTERS = ['', '', '', '', '']
 
 
 """Do not edit code below this line!"""
@@ -29,18 +31,18 @@ def main():
     """Wordle has two sets of lists (distinction unknown), all words in the lists are unique and
     are exactly 5 letters long."""
     # TODO: Longterm we should grab the lists from the site in the chance they get updated overtime
-    short_list = _read_file(os.path.join("algorithms", "assets", "wordle_short_list.json"))
-    long_list = _read_file(os.path.join("algorithms", "assets", "wordle_long_list.json"))
+    short_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_short_list.json'))
+    long_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_long_list.json'))
     combined_lists = short_list + long_list
 
     total_numbers = len(short_list + long_list)
-    print("Total number of Wordles:", total_numbers)
+    print('Total number of Wordles:', total_numbers)
 
     possible_words = get_best_guess(combined_lists)
     most_common_letters, possible_words = get_most_common(possible_words)
     best_words = get_best_words(most_common_letters, possible_words)
 
-    print(f"Top {NUM_BEST_GUESSES} Best Guesses:")
+    print(f'Top {NUM_BEST_GUESSES} Best Guesses:')
     for word in best_words:
         print(word)
 
@@ -61,8 +63,8 @@ def get_most_common(possible_words):
 
     most_common_start = Counter(letter_start_count).most_common()
     most_common_letters = Counter(letter_counts).most_common()
-    print("Most common starting letter:", most_common_start)
-    print("Most common letters:", most_common_letters)
+    print('Most common starting letter:', most_common_start)
+    print('Most common letters:', most_common_letters)
 
     return most_common_letters, possible_words
 
@@ -86,7 +88,7 @@ def get_best_words(most_common_letters, possible_words):
         for letter in [possible_letter[0] for possible_letter in letter_probabilities]:
             # Toss out words that don't match verified letter positions
             for index, verified_letter in enumerate(VERIFIED_LETTERS):
-                if verified_letter != word[index] and verified_letter != "":
+                if verified_letter != word[index] and verified_letter != '':
                     word_failed = True
                     break
             for (
@@ -109,7 +111,7 @@ def get_best_words(most_common_letters, possible_words):
         if not word_failed:
             possible_words_count += 1
 
-    print("Possible words:", possible_words_count)
+    print('Possible words:', possible_words_count)
 
     best_words = []
     for word, weight in sorted(
@@ -149,11 +151,11 @@ def get_best_guess(combined_lists):
 
 
 def _read_file(filename):
-    with open(filename, "r") as data:
+    with open(filename, 'r') as data:
         word_list = json.load(data)
 
     return word_list
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
