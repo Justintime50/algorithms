@@ -5,6 +5,11 @@ import os
 import string
 from collections import Counter, defaultdict
 
+# Solve the daily Wordle puzzles from https://www.powerlanguage.co.uk/wordle/
+# Usage: venv/bin/python algorithms/sorting/wordle_solver.py
+# Instructions: Re-run the script each time you take a guess, fill in the following
+# constants with the data that comes back.
+
 # Place letters here that were incorrect and cannot be used again
 DEAD_LETTERS = []
 
@@ -18,7 +23,7 @@ DEAD_LETTERS = []
 # }
 CORRECT_LETTERS_WRONG_POSITIONS = {}
 
-# Place your word guess here (starting word is `arose`)
+# Place letters here that are verified correct (green background) - best starting word is `arose`
 VERIFIED_LETTERS = ['', '', '', '', '']
 
 
@@ -28,22 +33,31 @@ NUM_BEST_GUESSES = 5  # The number of best guesses to return to the user
 
 
 def main():
-    """Wordle has two sets of lists (distinction unknown), all words in the lists are unique and
-    are exactly 5 letters long."""
+    """Wordle has two sets of lists (one is a short unordered list of the answers, one is a long
+    ordered list of all possible words). All words in the lists are unique and are exactly 5
+    letters long.
+    """
     # TODO: Longterm we should grab the lists from the site in the chance they get updated overtime
-    short_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_short_list.json'))
-    long_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_long_list.json'))
-    combined_lists = short_list + long_list
+    short_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_short_list.json'))  # Answer list
+    long_list = _read_file(
+        os.path.join('algorithms', 'assets', 'wordle_long_list.json')
+    )  # Possible words list (non-answers)
+    combined_lists = short_list + long_list  # noqa
 
     total_numbers = len(short_list + long_list)
     print('Total number of Wordles:', total_numbers)
 
-    possible_words = get_best_guess(combined_lists)
-    most_common_letters, possible_words = get_most_common(possible_words)
+    possible_words = get_best_guess(
+        short_list
+    )  # Replace the param with `combined_lists` if desired, but the answers come from `short_list`
+    most_common_start, most_common_letters, possible_words = get_most_common(possible_words)
     best_words = get_best_words(most_common_letters, possible_words)
 
     print(f'Top {NUM_BEST_GUESSES} Best Guesses:')
-    for word in best_words:
+    # Sort the best guesses by best starting letter first, then highest weighted
+    for word in sorted(best_words, key=lambda x: x[0].startswith(most_common_start[0][0]), reverse=True)[
+        :NUM_BEST_GUESSES
+    ]:
         print(word)
 
 
@@ -66,7 +80,7 @@ def get_most_common(possible_words):
     print('Most common starting letter:', most_common_start)
     print('Most common letters:', most_common_letters)
 
-    return most_common_letters, possible_words
+    return most_common_start, most_common_letters, possible_words
 
 
 def get_best_words(most_common_letters, possible_words):
@@ -118,7 +132,7 @@ def get_best_words(most_common_letters, possible_words):
         highest_ranking_words.items(),
         key=lambda x: x[1],
         reverse=True,
-    )[:NUM_BEST_GUESSES]:
+    ):
         best_words.append((word, weight))
 
     return best_words
