@@ -35,21 +35,21 @@ NUM_BEST_GUESSES = 5  # The number of best guesses to return to the user
 def main():
     """Wordle has two sets of lists (one is a short unordered list of the answers, one is a long
     ordered list of all possible words). All words in the lists are unique and are exactly 5
-    letters long.
+    letters long. Some words have repeating letters such as `knoll`
     """
     # TODO: Longterm we should grab the lists from the site in the chance they get updated overtime
-    short_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_short_list.json'))  # Answer list
-    long_list = _read_file(
-        os.path.join('algorithms', 'assets', 'wordle_long_list.json')
-    )  # Possible words list (non-answers)
-    combined_lists = short_list + long_list  # noqa
+    answer_list = _read_file(os.path.join('algorithms', 'assets', 'wordle_answer_list.json'))
+    non_answer_possible_words = _read_file(
+        os.path.join('algorithms', 'assets', 'wordle_non_answer_possible_words_list.json')
+    )
+    combined_lists = answer_list + non_answer_possible_words  # noqa
 
-    total_numbers = len(short_list + long_list)
+    total_numbers = len(answer_list + non_answer_possible_words)
     print('Total number of Wordles:', total_numbers)
 
     possible_words = get_best_guess(
-        short_list
-    )  # Replace the param with `combined_lists` if desired, but the answers come from `short_list`
+        answer_list
+    )  # Replace the param with `combined_lists` if desired, but the answers come from `answer_list`
     most_common_start, most_common_letters, possible_words = get_most_common(possible_words)
     best_words = get_best_words(most_common_letters, possible_words)
 
@@ -84,6 +84,7 @@ def get_most_common(possible_words):
 
 
 def get_best_words(most_common_letters, possible_words):
+    """Gets the best possible words to guess based on their weighted probability."""
     letter_probabilities = sorted(
         list(set(most_common_letters) - set(DEAD_LETTERS)),
         key=lambda x: x[1],
@@ -116,14 +117,13 @@ def get_best_words(most_common_letters, possible_words):
             if letter in word:
                 letters_that_match_criteria += 1
 
-        if letters_that_match_criteria == 5 and not word_failed:
+        # TODO: this doesn't account well for repeated letters, simply making the match count `4` for now, fix later
+        if letters_that_match_criteria >= 4 and not word_failed:
             word_weight = 0
+            possible_words_count += 1
             for letter in word:
                 word_weight += letter_weights[letter[0]]
                 highest_ranking_words[word] = word_weight
-
-        if not word_failed:
-            possible_words_count += 1
 
     print('Possible words:', possible_words_count)
 
