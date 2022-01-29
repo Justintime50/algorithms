@@ -154,3 +154,7 @@ venv/bin/python algorithms/category/script.py
 # Get a comprehensive list of development tools
 make help
 ```
+
+## Contributing
+
+I will not be accepting pull requests to this repo for new algorithms as this project is more of a playground for my own learning and exploration of algorithms and not an exhaustive collection for reference. I will consider improvement PRs for existing algorithms however.
