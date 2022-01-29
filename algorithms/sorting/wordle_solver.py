@@ -12,6 +12,10 @@ from collections import Counter, defaultdict
 
 # Place letters here that were incorrect and cannot be used again
 DEAD_LETTERS = []
+# TODO: If a letters appears in the VERIFIED_LETTERS array, we should avoid its occurance in the DEAD_LETTERS
+# TODO: because it could be a duplicate letter that doesn't occur again.
+
+# TODO: Prioritize words without repeat letters over those with repeats for guesses 2 & 3
 
 # Place letters here that were correct, but not in the right position (yellow background)
 # and say what index they didn't work in, eg:
