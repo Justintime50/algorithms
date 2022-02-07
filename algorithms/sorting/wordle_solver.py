@@ -12,10 +12,8 @@ from collections import Counter, defaultdict
 
 # Place letters here that were incorrect and cannot be used again
 DEAD_LETTERS = []
-# TODO: If a letters appears in the VERIFIED_LETTERS array, we should avoid its occurance in the DEAD_LETTERS
-# TODO: because it could be a duplicate letter that doesn't occur again.
 
-# TODO: Prioritize words without repeat letters over those with repeats for guesses 2 & 3
+# TODO: Prioritize words without repeat letters over those with repeats for guesses 1, 2, & 3
 
 # Place letters here that were correct, but not in the right position (yellow background)
 # and say what index they didn't work in, eg:
@@ -28,12 +26,15 @@ DEAD_LETTERS = []
 CORRECT_LETTERS_WRONG_POSITIONS = {}
 
 # Place letters here that are verified correct (green background) - best starting word is `arose`
-VERIFIED_LETTERS = ['', '', '', '', '']
+VERIFIED_LETTERS = []
 
 
 """Do not edit code below this line!"""
 ALPHABET = string.ascii_lowercase
 NUM_BEST_GUESSES = 5  # The number of best guesses to return to the user
+# We do this in case the user forgot to remove the letter from the dead letters when if it
+# becomes verified (such as double occurnaces).
+DEAD_LETTERS_MINUS_VERIFIED = set(DEAD_LETTERS) - set(VERIFIED_LETTERS)
 
 
 def main():
@@ -90,7 +91,7 @@ def get_most_common(possible_words):
 def get_best_words(most_common_letters, possible_words):
     """Gets the best possible words to guess based on their weighted probability."""
     letter_probabilities = sorted(
-        list(set(most_common_letters) - set(DEAD_LETTERS)),
+        list(set(most_common_letters) - set(DEAD_LETTERS_MINUS_VERIFIED)),
         key=lambda x: x[1],
         reverse=True,
     )
@@ -150,7 +151,7 @@ def get_best_guess(combined_lists):
     possible_words = []
     for word in combined_lists:
         word_failed = False
-        for dead_letter in DEAD_LETTERS:
+        for dead_letter in DEAD_LETTERS_MINUS_VERIFIED:
             if dead_letter in word:
                 word_failed = True
                 break
