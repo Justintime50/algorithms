@@ -143,13 +143,13 @@ def get_best_words(most_common_letters, possible_words):
     return best_words
 
 
-def get_best_guess(combined_lists):
+def get_best_guess(answer_list):
     """Get the best guess based on probability from what's been eliminated,
     what was guess correctly, and what letters remain.
     """
     # TODO: Could we use zip here instead?
     possible_words = []
-    for word in combined_lists:
+    for word in answer_list:
         word_failed = False
         for dead_letter in DEAD_LETTERS_MINUS_VERIFIED:
             if dead_letter in word:
