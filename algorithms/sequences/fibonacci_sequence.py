@@ -15,7 +15,7 @@ Usage: ITERATIONS=20 venv/bin/python fibonnaci_sequence.py
 ITERATIONS = int(os.getenv('ITERATIONS', 20))
 
 
-def generate_fibonacci_sequence() -> List[int]:
+def generate_fibonacci_sequence():
     _validate_iterations()
     print(f'The Fibonacci Sequence to {ITERATIONS} iterations:')
     fibonacci_sequence = _iterate_fibonacci_sequence()
