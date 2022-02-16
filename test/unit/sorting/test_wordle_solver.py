@@ -20,6 +20,10 @@ def test_get_best_guess():
 
 
 def test_read_file():
-    file_data = _read_file(os.path.join('algorithms', 'assets', 'wordle_answer_list.json'))
+    answer_file_data = _read_file(os.path.join('algorithms', 'assets', 'wordle_answer_list.json'))
+    non_answer_file_data = _read_file(
+        os.path.join('algorithms', 'assets', 'wordle_non_answer_possible_words_list.json')
+    )
 
-    assert len(file_data) == 2315
+    assert len(answer_file_data) == 2309
+    assert len(non_answer_file_data) == 10638
