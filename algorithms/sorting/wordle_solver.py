@@ -24,8 +24,8 @@ DEAD_LETTERS: List[str] = []
 # }
 CORRECT_LETTERS_WRONG_POSITIONS: Dict[str, int] = {}
 
-# Place letters here that are verified correct (green background) - best starting word is `arose`
-VERIFIED_LETTERS: List[str] = []
+# Place letters here that are verified correct (green background)
+VERIFIED_LETTERS: List[str] = ['', '', '', '', '']
 
 
 """Do not edit code below this line!"""
