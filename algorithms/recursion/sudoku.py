@@ -64,7 +64,7 @@ def solve_sudoku_puzzle():
         # Only show this prompt if there are indeed more solutions
         # show_more = input('Show other solutions? (yes/no)')
         # if show_more.lower() != 'yes':
-        #     sys.exit('Skipped showing other solutions.')
+        #     raise Error('Skipped showing other solutions.')
     else:
         raise Exception('No solution!')
 

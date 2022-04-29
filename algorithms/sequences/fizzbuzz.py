@@ -1,5 +1,4 @@
 import os
-import sys
 
 """
 FIZZBUZZ
@@ -33,7 +32,7 @@ def generate_fizzbuzz():
 def _validate_iterations():
     """Validate the iterations before proceeding."""
     if ITERATIONS < 1:
-        sys.exit('ITERATIONS must be greater than or equal to 1.')
+        raise ValueError('ITERATIONS must be greater than or equal to 1.')
 
 
 def _determine_output(iteration) -> str:

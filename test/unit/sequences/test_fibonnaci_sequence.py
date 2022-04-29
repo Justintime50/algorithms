@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+import pytest
+
 from algorithms.sequences.fibonacci_sequence import (
     _iterate_fibonacci_sequence,
     _validate_iterations,
@@ -42,17 +44,29 @@ def test_iterate_fibonacci_sequence():
     ]
 
 
-@patch('algorithms.sequences.fibonacci_sequence.ITERATIONS', 94)
-@patch('sys.exit')
-def test_validate_iterations_iteration_too_large(mock_sys_exit):
-    _validate_iterations()
+@patch('algorithms.sequences.fibonacci_sequence.ITERATIONS', 5)
+def test_validate_iterations_valid_number():
+    try:
+        _validate_iterations()
+    except Exception as error:
+        assert False, f'An exception was raised and should not have been. {error}'
 
-    mock_sys_exit.assert_called_once()
+
+@patch('algorithms.sequences.fibonacci_sequence.ITERATIONS', 94)
+def test_validate_iterations_iteration_too_large():
+    with pytest.raises(ValueError) as error:
+        _validate_iterations()
+
+    assert (
+        str(error.value)
+        == 'You have requested too many iterations - computers can literally only print up to 93 iterations before the'
+        ' Fibonacci number exceeds the max value allowed in memory. Please select a lower number and try again.'
+    )
 
 
 @patch('algorithms.sequences.fibonacci_sequence.ITERATIONS', -1)
-@patch('sys.exit')
-def test_validate_iterations_iteration_less_than_1(mock_sys_exit):
-    _validate_iterations()
+def test_validate_iterations_iteration_less_than_1():
+    with pytest.raises(ValueError) as error:
+        _validate_iterations()
 
-    mock_sys_exit.assert_called_once()
+    assert str(error.value) == 'ITERATIONS must be greater than or equal to 1.'

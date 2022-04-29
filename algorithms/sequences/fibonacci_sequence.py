@@ -1,5 +1,4 @@
 import os
-import sys
 from typing import List
 
 """
@@ -23,15 +22,15 @@ def generate_fibonacci_sequence():
 
 
 def _validate_iterations():
-    """Check if the first parameter exceeds the max iterations allowed."""
+    """Ensure the iterations value is within the acceptable range."""
     if ITERATIONS >= 94:
-        sys.exit(
+        raise ValueError(
             'You have requested too many iterations - computers can literally'
             ' only print up to 93 iterations before the Fibonacci number exceeds'
             ' the max value allowed in memory. Please select a lower number and try again.'
         )
     if ITERATIONS < 1:
-        sys.exit('ITERATIONS must be greater than or equal to 1.')
+        raise ValueError('ITERATIONS must be greater than or equal to 1.')
 
 
 def _iterate_fibonacci_sequence() -> List[int]:

@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+import pytest
+
 from algorithms.sequences.fizzbuzz import _determine_output, generate_fizzbuzz
 
 
@@ -35,8 +37,8 @@ def test_fizzbuzz_determine_output_normal():
 
 
 @patch('algorithms.sequences.fizzbuzz.ITERATIONS', -1)
-@patch('sys.exit')
-def test_fibonacci_sequence_iteration_less_than_1(mock_sys_exit):
-    generate_fizzbuzz()
+def test_fibonacci_sequence_iteration_less_than_1():
+    with pytest.raises(ValueError) as error:
+        generate_fizzbuzz()
 
-    mock_sys_exit.assert_called_once()
+    assert str(error.value) == 'ITERATIONS must be greater than or equal to 1.'
