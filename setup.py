@@ -30,7 +30,12 @@ setuptools.setup(
     url='http://github.com/justintime50/algorithms',
     author='Justintime50',
     license='MIT',
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(
+        exclude=[
+            'examples',
+            'test',
+        ]
+    ),
     package_data={'algorithms': ['py.typed']},
     classifiers=[
         "Programming Language :: Python :: 3",
