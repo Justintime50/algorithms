@@ -3,10 +3,6 @@ import setuptools
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
-REQUIREMENTS = [
-    'numpy == 1.*',
-]
-
 DEV_REQUIREMENTS = [
     'black == 22.*',
     'build == 0.7.*',
@@ -42,7 +38,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=REQUIREMENTS,
     extras_require={
         'dev': DEV_REQUIREMENTS,
     },

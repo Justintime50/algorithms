@@ -1,7 +1,5 @@
 from typing import List, Union
 
-import numpy as np
-
 # Fixes for mypy
 count_numbers_added: int
 count_numbers_backtracked: int
@@ -13,7 +11,7 @@ Definition: A Sudoku puzzle solver that uses recursion. Sudoku is a 9x9 grid tha
 enter numbers where each cell is filled but there are no repeats between the numbers in the same
 column, row, or box
 
-Usage: venv/bin/pyton algorithms/recursion/sudoku.py
+Usage: venv/bin/python algorithms/recursion/sudoku_solver.py
 
 Lessons Learned:
 1) The only way this works is if you use back tracking and recursion, otherwise you'll get to
@@ -43,9 +41,6 @@ def solve_sudoku_puzzle():
     count_numbers_added = count_numbers_backtracked = 0
     grid = GRID  # Reassign here so we can pass it around and edit the values
 
-    # TODO: Allow for dynamic grid generation
-    # grid = generate_numpy_grid()
-
     print('Original:')
     for row in grid:
         print(row)
@@ -67,26 +62,6 @@ def solve_sudoku_puzzle():
         #     raise Error('Skipped showing other solutions.')
     else:
         raise Exception('No solution!')
-
-
-def generate_numpy_grid() -> List[List[int]]:
-    """Generate a numpy grid of dynamic numbers."""
-    # TODO: Fix this generation, currently it works great to
-    # generate a grid; however, it does not generate a correct
-    # Sudoku grid that starts with only one number per row,
-    # column, and block
-    numpy_grid = []
-    sudoku_number_choices = range(10)  # Possibilities are 0-9
-    distribution = [0.64, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04]
-
-    for i in sudoku_number_choices:
-        numpy_single_row = np.random.choice(sudoku_number_choices, 9, True, distribution).tolist()
-        numpy_grid.append(numpy_single_row)
-
-    for row in numpy_grid:
-        print(row)
-
-    return numpy_grid
 
 
 def _check_valid_number(y: int, x: int, n: int, grid: List[List[int]]):

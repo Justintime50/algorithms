@@ -2,36 +2,27 @@ from unittest.mock import patch
 
 import pytest
 
-from algorithms.recursion.sudoku import (
+from algorithms.recursion.sudoku_solver import (
     GRID,
     _check_valid_number,
     _solve_puzzle,
-    generate_numpy_grid,
     solve_sudoku_puzzle,
 )
 
 
-@patch('algorithms.recursion.sudoku._solve_puzzle')
+@patch('algorithms.recursion.sudoku_solver._solve_puzzle')
 def test_run(mock_solve_puzzle):
     solve_sudoku_puzzle()
 
     mock_solve_puzzle.assert_called_once()
 
 
-@patch('algorithms.recursion.sudoku._solve_puzzle', return_value=False)
+@patch('algorithms.recursion.sudoku_solver._solve_puzzle', return_value=False)
 def test_run_no_solution(mock_solve_puzzle):
     with pytest.raises(Exception) as error:
         solve_sudoku_puzzle()
 
         assert error.message == 'No solution!'
-
-
-def test_generate_numpy_grid():
-    grid = generate_numpy_grid()
-
-    for i, row in enumerate(grid):
-        assert len(row) == 9
-        assert len(grid[i]) == 9
 
 
 def test_check_valid_number():
