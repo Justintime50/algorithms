@@ -2,7 +2,10 @@ from unittest.mock import patch
 
 import pytest
 
-from algorithms.sequences.fizzbuzz import _determine_output, generate_fizzbuzz
+from algorithms.sequences.fizzbuzz import (
+    _determine_output,
+    generate_fizzbuzz,
+)
 
 
 @patch('algorithms.sequences.fizzbuzz._determine_output')

@@ -1,6 +1,10 @@
 import os
 
-from algorithms.sorting.wordle_solver import _read_file, get_best_guess, get_most_common
+from algorithms.sorting.wordle_solver import (
+    _read_file,
+    get_best_guess,
+    get_most_common,
+)
 
 
 def test_get_most_common():

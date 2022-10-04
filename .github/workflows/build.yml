@@ -16,6 +16,8 @@ jobs:
         run: make install
       - name: Check format
         run: make format-check
+      - name: Scan for security vulnerabilities
+        run: make scan
   test:
     runs-on: ubuntu-latest
     strategy:

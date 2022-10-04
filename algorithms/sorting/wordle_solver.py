@@ -1,8 +1,15 @@
 import json
 import os
 import string
-from collections import Counter, defaultdict
-from typing import Dict, List
+from collections import (
+    Counter,
+    defaultdict,
+)
+from typing import (
+    Dict,
+    List,
+)
+
 
 # Solve the daily Wordle puzzles from https://www.powerlanguage.co.uk/wordle/
 # Usage: venv/bin/python algorithms/sorting/wordle_solver.py

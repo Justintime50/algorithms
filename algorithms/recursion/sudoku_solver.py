@@ -1,4 +1,8 @@
-from typing import List, Union
+from typing import (
+    List,
+    Union,
+)
+
 
 # Fixes for mypy
 count_numbers_added: int
