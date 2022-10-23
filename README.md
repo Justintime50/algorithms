@@ -65,6 +65,28 @@ Numbers put into the Sudoku puzzle: 769
 Numbers that had to be backtracked due to a dead-end: 720
 ```
 
+### Search
+
+<img src="algorithms/assets/breadth_first_graph.jpg" alt="Breadth First Search Graph">
+
+This graph is for both Breadth and Depth First Search ^
+
+[**Breadth First Search - O(V + E)**](algorithms/search/breadth_first_search.py)
+
+The purpose of this algorithm is to search all neighbors before traversing further down the graph. A real world use-case of this is GPS navigation to find the shortest route to your destination.
+
+```
+[5, 3, 7, 2, 4, 8]
+```
+
+[**Depth First Search - O(V + E)**](algorithms/search/depth_first_search.py)
+
+The purpose of this algorithm is to traverse an entire branch before backtracking to traverse a neighbor higher up the graph. A real world use-case of this is solving a puzzle with only one solution (eg: Sudoku solver)
+
+```
+[5, 3, 2, 4, 8, 7]
+```
+
 ### Sequences
 
 [**Fibonnaci Sequence - O(2^n)**](algorithms/sequences/fibonnaci_sequence.py)
@@ -134,7 +156,7 @@ Top 5 Best Guesses:
 ('steel', 114)
 ```
 
-Watch a video about the creation of this solver: https://www.youtube.com/watch?v=KiOiV8rpC7c
+Watch a video about the creation of this solver: <https://www.youtube.com/watch?v=KiOiV8rpC7c>
 
 ## Install
 
