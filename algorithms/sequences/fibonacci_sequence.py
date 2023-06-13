@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import Iterator
 
 
 """
@@ -34,21 +34,18 @@ def _validate_iterations():
         raise ValueError('ITERATIONS must be greater than or equal to 1.')
 
 
-def _iterate_fibonacci_sequence() -> List[int]:
+def _iterate_fibonacci_sequence() -> Iterator[int]:
     """Iterate through the Fibonacci Sequence to the desired iteration."""
     new_number = 0
     this_number = 1
     previous_number = 0
-    final_list = []
     counter = 1
     while counter < ITERATIONS:
         new_number = previous_number + this_number
         this_number = previous_number
         previous_number = new_number
-        final_list.append(new_number)
+        yield new_number
         counter += 1
-
-    return final_list
 
 
 def main():

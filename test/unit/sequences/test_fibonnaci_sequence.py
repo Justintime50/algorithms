@@ -19,7 +19,7 @@ def test_generate_fibonacci_sequence(mock_iterate_sequence, mock_validate_iterat
 
 
 def test_iterate_fibonacci_sequence():
-    fibonacci_sequence = _iterate_fibonacci_sequence()
+    fibonacci_sequence = list(_iterate_fibonacci_sequence())
 
     assert fibonacci_sequence == [
         1,
