@@ -6,11 +6,11 @@ with open('README.md', 'r') as fh:
 
 DEV_REQUIREMENTS = [
     'bandit == 1.7.*',
-    'black == 22.*',
-    'build == 0.7.*',
-    'flake8 == 4.*',
+    'black == 23.*',
+    'build == 0.10.*',
+    'flake8 == 6.*',
     'isort == 5.*',
-    'mypy == 0.942',
+    'mypy == 1.3.*',
     'pytest == 7.*',
     'pytest-cov == 4.*',
     'twine == 4.*',
@@ -42,5 +42,5 @@ setuptools.setup(
     extras_require={
         'dev': DEV_REQUIREMENTS,
     },
-    python_requires='>=3.7, <4',
+    python_requires='>=3.8, <4',
 )
