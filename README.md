@@ -38,7 +38,7 @@ All algorithms have a complexity known as `Big O Notation`, the more complex an 
 
 [**Sudoku Solver - O(n)**](algorithms/recursion/sudoku.py)
 
-```
+```text
 Original:
 [3, 0, 6, 5, 0, 8, 4, 0, 0]
 [5, 2, 0, 0, 0, 0, 0, 0, 0]
@@ -75,7 +75,7 @@ This graph is for both Breadth and Depth First Search ^
 
 The purpose of this algorithm is to search all neighbors before traversing further down the graph. A real world use-case of this is GPS navigation to find the shortest route to your destination.
 
-```
+```text
 [5, 3, 7, 2, 4, 8]
 ```
 
@@ -83,7 +83,7 @@ The purpose of this algorithm is to search all neighbors before traversing furth
 
 The purpose of this algorithm is to traverse an entire branch before backtracking to traverse a neighbor higher up the graph. A real world use-case of this is solving a puzzle with only one solution (eg: Sudoku solver)
 
-```
+```text
 [5, 3, 2, 4, 8, 7]
 ```
 
@@ -91,14 +91,14 @@ The purpose of this algorithm is to traverse an entire branch before backtrackin
 
 [**Fibonnaci Sequence - O(2^n)**](algorithms/sequences/fibonnaci_sequence.py)
 
-```
+```text
 The Fibonacci Sequence to 20 iterations:
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
 ```
 
 [**Fizz Buzz - O(n)**](algorithms/sequences/fizzbuzz.py)
 
-```
+```text
 Fizz Buzz to 15 iterations:
 1
 2
@@ -121,7 +121,7 @@ FizzBuzz
 
 [**Bubble Sort - O(1)**](algorithms/sorting/bubble_sort.py)
 
-```
+```text
 Original: [3, 1, 5, 9, 7, 6, 2, 8, 4]
 [1, 3, 5, 9, 7, 6, 2, 8, 4] => Swapped 3 and 1
 [1, 3, 5, 7, 9, 6, 2, 8, 4] => Swapped 9 and 7
@@ -143,7 +143,7 @@ List sorted successfully in 0:00:00.000080 with Bubble Sort Algorithm!
 
 [**Wordle Solver - O(n^2)**](algorithms/sorting/wordle_solver.py)
 
-```
+```text
 Total number of Wordles: 12947
 Most common starting letter: [('s', 365), ('c', 198), ('b', 173), ('t', 149), ('p', 141), ('a', 140), ('f', 135), ('g', 115), ('d', 111), ('m', 107), ('r', 105), ('l', 87), ('w', 82), ('e', 72), ('h', 69), ('v', 43), ('o', 41), ('n', 37), ('i', 34), ('u', 33), ('q', 23), ('k', 20), ('j', 20), ('y', 6), ('z', 3)]
 Most common letters: [('e', 31980), ('a', 25350), ('r', 23322), ('o', 19578), ('t', 18954), ('l', 18616), ('i', 17420), ('s', 17368), ('n', 14898), ('c', 12350), ('u', 12116), ('y', 11024), ('d', 10218), ('h', 10062), ('p', 9490), ('m', 8216), ('g', 8060), ('b', 7280), ('f', 5954), ('k', 5460), ('w', 5044), ('v', 3952), ('z', 1040), ('x', 962), ('q', 754), ('j', 702)]
@@ -161,7 +161,7 @@ Watch a video about the creation of this solver: <https://www.youtube.com/watch?
 ## Install
 
 ```bash
-make install
+just install
 ```
 
 ## Usage
@@ -176,7 +176,7 @@ venv/bin/python algorithms/category/script.py
 
 ```bash
 # Get a comprehensive list of development tools
-make help
+just --list
 ```
 
 ## Contributing
