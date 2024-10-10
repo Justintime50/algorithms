@@ -6,14 +6,12 @@ with open('README.md', 'r') as fh:
 
 DEV_REQUIREMENTS = [
     'bandit == 1.7.*',
-    'black == 23.*',
-    'build == 0.10.*',
-    'flake8 == 6.*',
+    'black == 24.*',
+    'flake8 == 7.*',
     'isort == 5.*',
-    'mypy == 1.3.*',
-    'pytest == 7.*',
+    'mypy == 1.11.*',
+    'pytest == 8.*',
     'pytest-cov == 4.*',
-    'twine == 4.*',
 ]
 
 setuptools.setup(
