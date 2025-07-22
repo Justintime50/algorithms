@@ -20,15 +20,27 @@ Which lockers are left open after all 100 students have walked the row of locker
 
 STUDENTS = 100
 
-lockers = [0] * 100
 
-for student in range(1, STUDENTS + 1):
-    for i, locker in enumerate(lockers):
-        if (i + 1) % student == 0:
-            if lockers[i] == 0:
-                lockers[i] = 1
-            elif lockers[i] == 1:
-                lockers[i] = 0
+def solve_locker_problem():
+    lockers = [0] * 100
 
-open_lockers = [i + 1 for i, locker in enumerate(lockers) if locker == 1]
-print(open_lockers)
+    for student in range(1, STUDENTS + 1):
+        for i, locker in enumerate(lockers):
+            if (i + 1) % student == 0:
+                if lockers[i] == 0:
+                    lockers[i] = 1
+                elif lockers[i] == 1:
+                    lockers[i] = 0
+
+    open_lockers = [i + 1 for i, locker in enumerate(lockers) if locker == 1]
+
+    return open_lockers
+
+
+def main():
+    solution = solve_locker_problem()
+    print(solution)
+
+
+if __name__ == '__main__':
+    main()
