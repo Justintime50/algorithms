@@ -8,7 +8,7 @@ from algorithms.sorting.wordle_solver import (
 
 
 def test_get_most_common():
-    file_data = _read_file(os.path.join('algorithms', 'assets', 'wordle_answer_list.json'))
+    file_data = _read_file(os.path.join("algorithms", "assets", "wordle_answer_list.json"))
     most_common_start, most_common_letters, possible_words = get_most_common(file_data)
 
     assert isinstance(most_common_start, list)
@@ -17,16 +17,16 @@ def test_get_most_common():
 
 
 def test_get_best_guess():
-    file_data = _read_file(os.path.join('algorithms', 'assets', 'wordle_answer_list.json'))
+    file_data = _read_file(os.path.join("algorithms", "assets", "wordle_answer_list.json"))
     best_guess = get_best_guess(file_data)
 
     assert isinstance(best_guess, list)
 
 
 def test_read_file():
-    answer_file_data = _read_file(os.path.join('algorithms', 'assets', 'wordle_answer_list.json'))
+    answer_file_data = _read_file(os.path.join("algorithms", "assets", "wordle_answer_list.json"))
     non_answer_file_data = _read_file(
-        os.path.join('algorithms', 'assets', 'wordle_non_answer_possible_words_list.json')
+        os.path.join("algorithms", "assets", "wordle_non_answer_possible_words_list.json")
     )
 
     assert len(answer_file_data) == 2309

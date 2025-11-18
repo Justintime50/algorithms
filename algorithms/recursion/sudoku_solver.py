@@ -45,19 +45,19 @@ def solve_sudoku_puzzle():
     count_numbers_added = count_numbers_backtracked = 0
     grid = GRID  # Reassign here so we can pass it around and edit the values
 
-    print('Original:')
+    print("Original:")
     for row in grid:
         print(row)
-    print('\n')
+    print("\n")
 
     grid_solved = _solve_puzzle(grid)
 
     if grid_solved:
-        print('Solved:')
+        print("Solved:")
         for row in grid:
             print(row)
-        print(f'Numbers put into the Sudoku puzzle: {count_numbers_added}')
-        print(f'Numbers that had to be backtracked due to a dead-end: {count_numbers_backtracked}')
+        print(f"Numbers put into the Sudoku puzzle: {count_numbers_added}")
+        print(f"Numbers that had to be backtracked due to a dead-end: {count_numbers_backtracked}")
 
         # TODO: Count how many solutions the solver came up with
         # Only show this prompt if there are indeed more solutions
@@ -65,7 +65,7 @@ def solve_sudoku_puzzle():
         # if show_more.lower() != 'yes':
         #     raise Error('Skipped showing other solutions.')
     else:
-        raise Exception('No solution!')
+        raise Exception("No solution!")
 
 
 def _check_valid_number(y: int, x: int, n: int, grid: List[List[int]]):
@@ -127,5 +127,5 @@ def main():
     solve_sudoku_puzzle()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

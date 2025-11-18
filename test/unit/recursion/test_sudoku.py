@@ -10,19 +10,19 @@ from algorithms.recursion.sudoku_solver import (
 )
 
 
-@patch('algorithms.recursion.sudoku_solver._solve_puzzle')
+@patch("algorithms.recursion.sudoku_solver._solve_puzzle")
 def test_run(mock_solve_puzzle):
     solve_sudoku_puzzle()
 
     mock_solve_puzzle.assert_called_once()
 
 
-@patch('algorithms.recursion.sudoku_solver._solve_puzzle', return_value=False)
+@patch("algorithms.recursion.sudoku_solver._solve_puzzle", return_value=False)
 def test_run_no_solution(mock_solve_puzzle):
     with pytest.raises(Exception) as error:
         solve_sudoku_puzzle()
 
-        assert error.message == 'No solution!'
+        assert error.message == "No solution!"
 
 
 def test_check_valid_number():

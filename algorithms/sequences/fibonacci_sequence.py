@@ -12,26 +12,26 @@ Usage: ITERATIONS=20 venv/bin/python fibonnaci_sequence.py
 """
 
 
-ITERATIONS = int(os.getenv('ITERATIONS', 20))
+ITERATIONS = int(os.getenv("ITERATIONS", 20))
 
 
 def generate_fibonacci_sequence():
     _validate_iterations()
-    print(f'The Fibonacci Sequence to {ITERATIONS} iterations:')
+    print(f"The Fibonacci Sequence to {ITERATIONS} iterations:")
     fibonacci_sequence = _iterate_fibonacci_sequence()
-    print(', '.join([str(number) for number in fibonacci_sequence]))
+    print(", ".join([str(number) for number in fibonacci_sequence]))
 
 
 def _validate_iterations():
     """Ensure the iterations value is within the acceptable range."""
     if ITERATIONS >= 94:
         raise ValueError(
-            'You have requested too many iterations - computers can literally'
-            ' only print up to 93 iterations before the Fibonacci number exceeds'
-            ' the max value allowed in memory. Please select a lower number and try again.'
+            "You have requested too many iterations - computers can literally"
+            " only print up to 93 iterations before the Fibonacci number exceeds"
+            " the max value allowed in memory. Please select a lower number and try again."
         )
     if ITERATIONS < 1:
-        raise ValueError('ITERATIONS must be greater than or equal to 1.')
+        raise ValueError("ITERATIONS must be greater than or equal to 1.")
 
 
 def _iterate_fibonacci_sequence() -> Iterator[int]:
@@ -52,5 +52,5 @@ def main():
     generate_fibonacci_sequence()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

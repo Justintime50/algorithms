@@ -1,17 +1,16 @@
 import setuptools
 
-
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 DEV_REQUIREMENTS = [
-    'bandit == 1.7.*',
-    'black == 24.*',
+    'bandit == 1.9.*',
+    'black == 25.*',
     'flake8 == 7.*',
-    'isort == 5.*',
-    'mypy == 1.11.*',
-    'pytest == 8.*',
-    'pytest-cov == 4.*',
+    'isort == 7.*',
+    'mypy == 1.18.*',
+    'pytest == 9.*',
+    'pytest-cov == 7.*',
 ]
 
 setuptools.setup(
@@ -40,5 +39,5 @@ setuptools.setup(
     extras_require={
         'dev': DEV_REQUIREMENTS,
     },
-    python_requires='>=3.8, <4',
+    python_requires='>=3.10, <4',
 )

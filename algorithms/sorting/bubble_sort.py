@@ -36,13 +36,13 @@ def bubble_sort() -> List[int]:
     i = 1
     num_times_skipped = 0
 
-    print(f'Original: {LIST}')
+    print(f"Original: {LIST}")
     start_time = datetime.now()
     while num_times_skipped + 1 != len(LIST):
         try:
             if LIST[next_index] < LIST[previous_index] and LIST[next_index] != LIST[previous_index]:
                 new_array.insert(next_index, new_array.pop(previous_index))
-                print(f'{new_array} => Swapped {LIST[next_index]} and {LIST[previous_index]}')
+                print(f"{new_array} => Swapped {LIST[next_index]} and {LIST[previous_index]}")
                 previous_index += 1
                 next_index += 1
             else:
@@ -55,7 +55,7 @@ def bubble_sort() -> List[int]:
             num_times_skipped = 0
             i += 1
     end_time = datetime.now() - start_time
-    print(f'List sorted successfully in {end_time} with Bubble Sort Algorithm!')
+    print(f"List sorted successfully in {end_time} with Bubble Sort Algorithm!")
 
     return new_array
 
@@ -64,5 +64,5 @@ def main():
     bubble_sort()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

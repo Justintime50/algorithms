@@ -17,13 +17,13 @@ Fizz or Buzz
 """
 
 
-ITERATIONS = int(os.getenv('ITERATIONS', 15))
+ITERATIONS = int(os.getenv("ITERATIONS", 15))
 
 
 def generate_fizzbuzz():
     """Iterate through numbers and print FizzBuzz to console."""
     _validate_iterations()
-    print(f'Fizz Buzz to {ITERATIONS} iterations:')
+    print(f"Fizz Buzz to {ITERATIONS} iterations:")
 
     for iteration in range(1, ITERATIONS + 1):
         output = _determine_output(iteration)
@@ -33,7 +33,7 @@ def generate_fizzbuzz():
 def _validate_iterations():
     """Validate the iterations before proceeding."""
     if ITERATIONS < 1:
-        raise ValueError('ITERATIONS must be greater than or equal to 1.')
+        raise ValueError("ITERATIONS must be greater than or equal to 1.")
 
 
 def _determine_output(iteration) -> str:
@@ -42,11 +42,11 @@ def _determine_output(iteration) -> str:
     buzz = iteration % 5 == 0
 
     if fizz and buzz:
-        output = 'FizzBuzz'
+        output = "FizzBuzz"
     elif fizz:
-        output = 'Fizz'
+        output = "Fizz"
     elif buzz:
-        output = 'Buzz'
+        output = "Buzz"
     else:
         output = str(iteration)
 
@@ -57,5 +57,5 @@ def main():
     generate_fizzbuzz()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

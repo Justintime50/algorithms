@@ -27,7 +27,7 @@ def invert_tree(node: TreeNode) -> TreeNode:
 def print_tree(node: TreeNode):
     """Print the output of the tree."""
     # Print the top level node
-    print(node.val, end='')
+    print(node.val, end="")
 
     # If other nodes exist, print them too
     if node.left:
@@ -46,19 +46,19 @@ def main() -> TreeNode:
     tree.right.left = TreeNode(6)
     tree.right.right = TreeNode(7)
 
-    print('Original tree:')
+    print("Original tree:")
     print_tree(tree)
-    print('')
+    print("")
 
     # Send the entire tree to be inverted
     inverted_tree = invert_tree(tree)
 
-    print('Inverted tree:')
+    print("Inverted tree:")
     print_tree(inverted_tree)
-    print('')
+    print("")
 
     return inverted_tree
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

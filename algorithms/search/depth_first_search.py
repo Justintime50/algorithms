@@ -22,5 +22,5 @@ def depth_first_search(visited, traversal_order, graph, node):
     return traversal_order
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -5,7 +5,7 @@
 Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a Sudoku solver, and more.
 
 [![Build](https://github.com/Justintime50/algorithms/workflows/build/badge.svg)](https://github.com/Justintime50/algorithms/actions)
-[![Coverage Status](https://coveralls.io/repos/github/Justintime50/algorithms/badge.svg?branch=main)](https://coveralls.io/github/Justintime50/algorithms?branch=main)
+[![Coverage Status](https://img.shields.io/codecov/c/github/justintime50/algorithms)](https://app.codecov.io/github/Justintime50/algorithms)
 [![Licence](https://img.shields.io/github/license/justintime50/algorithms)](LICENSE)
 
 <img src="https://raw.githubusercontent.com/justintime50/assets/main/src/algorithms/showcase.png" alt="Showcase">

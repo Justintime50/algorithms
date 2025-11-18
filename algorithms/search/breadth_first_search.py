@@ -31,5 +31,5 @@ def breadth_first_search(visited, graph, node):
     return traversal_order
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
