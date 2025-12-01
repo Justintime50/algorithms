@@ -1,3 +1,32 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "algorithms"
+description = "Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a Sudoku solver, and more."
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.10,<4"
+license = { text = "MIT" }
+authors = [{ name = "Justintime50" }]
+urls = { Homepage = "http://github.com/justintime50/algorithms" }
+optional-dependencies = { dev = [
+    "bandit == 1.9.*",
+    "black == 25.*",
+    "flake8 == 7.*",
+    "isort == 7.*",
+    "mypy == 1.18.*",
+    "pytest == 9.*",
+    "pytest-cov == 7.*",
+] }
+
+[tool.setuptools.packages.find]
+exclude = ["examples", "test"]
+
+[tool.setuptools.package-data]
+algorithms = ["py.typed"]
+
 [tool.black]
 line-length = 120
 
