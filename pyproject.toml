@@ -7,7 +7,7 @@ name = "algorithms"
 description = "Classic algorithms including Fizz Buzz, Bubble Sort, the Fibonacci Sequence, a Sudoku solver, and more."
 version = "0.1.0"
 readme = "README.md"
-requires-python = ">=3.10,<4"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Justintime50" }]
 urls = { Homepage = "http://github.com/justintime50/algorithms" }
@@ -15,6 +15,7 @@ optional-dependencies = { dev = [
     "bandit == 1.9.*",
     "black == 25.*",
     "flake8 == 7.*",
+    "Flake8-pyproject == 1.2.*",
     "isort == 7.*",
     "mypy == 1.18.*",
     "pytest == 9.*",
@@ -43,3 +44,7 @@ use_parentheses = true
 
 [tool.mypy]
 disable_error_code = "import-untyped"
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = "E203"
