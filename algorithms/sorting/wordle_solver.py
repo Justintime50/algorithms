@@ -10,7 +10,6 @@ from typing import (
     List,
 )
 
-
 # Solve the daily Wordle puzzles from https://www.powerlanguage.co.uk/wordle/
 # Usage: venv/bin/python algorithms/sorting/wordle_solver.py
 # Instructions: Re-run the script each time you take a guess, fill in the following

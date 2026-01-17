@@ -3,7 +3,6 @@ from typing import (
     Union,
 )
 
-
 # Fixes for mypy
 count_numbers_added: int
 count_numbers_backtracked: int
